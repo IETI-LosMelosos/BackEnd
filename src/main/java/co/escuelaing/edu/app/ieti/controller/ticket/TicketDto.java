@@ -10,6 +10,12 @@ public class TicketDto {
     int total;
     String bank;
 
+    public TicketDto(int userId,int total,String bank){
+        this.userId=userId;
+        this.total=total;
+        this.bank=bank;
+    }
+
     public TicketDto(){
     }
 
