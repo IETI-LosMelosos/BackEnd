@@ -28,5 +28,4 @@ public class ServerErrorResponseDto {
     public int getHttpStatus() {
         return httpStatus;
     }
-
 }

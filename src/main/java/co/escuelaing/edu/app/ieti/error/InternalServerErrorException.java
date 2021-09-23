@@ -21,6 +21,4 @@ public class InternalServerErrorException extends RuntimeException {
     public HttpStatus getHttpStatus() {
         return httpStatus;
     }
-
 }
- 
