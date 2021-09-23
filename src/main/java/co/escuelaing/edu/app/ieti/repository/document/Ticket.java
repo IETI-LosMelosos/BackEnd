@@ -14,7 +14,7 @@ public class Ticket{
 
     int userId;
 
-    HashMap<Product, String> products;
+    List<String>  products;
 
     int total;
 
@@ -43,11 +43,11 @@ public class Ticket{
         this.userId = userId;
     }
 
-    public HashMap<Product, String> getProducts() {
+    public List<String>  getProducts() {
         return products;
     }
 
-    public void setProducts(HashMap<Product, String> products) {
+    public void setProducts(List<String>  products) {
         this.products = products;
     }
 

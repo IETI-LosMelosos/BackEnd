@@ -2,11 +2,11 @@ package co.escuelaing.edu.app.ieti.controller.ticket;
 
 import co.escuelaing.edu.app.ieti.repository.document.Product;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class TicketDto {
     int userId;
-    HashMap<Product, String> products;
+    List<String> products;
     int total;
     String bank;
 
@@ -21,11 +21,11 @@ public class TicketDto {
         this.userId = userId;
     }
 
-    public HashMap<Product, String> getProducts() {
+    public List<String> getProducts() {
         return products;
     }
 
-    public void setProducts(HashMap<Product, String> products) {
+    public void setProducts(List<String> products) {
         this.products = products;
     }
 
