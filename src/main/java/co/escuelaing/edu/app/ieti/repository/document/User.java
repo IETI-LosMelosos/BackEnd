@@ -4,6 +4,7 @@ import co.escuelaing.edu.app.ieti.controller.user.UserDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +49,7 @@ public class User {
         createdAt = new Date();
         roles = new ArrayList<>(Collections.singleton(RoleEnum.USER));
         // TODO uncomment this line
-        // passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
+         passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
     }
 
     public String getId() {
@@ -97,9 +98,9 @@ public class User {
         this.longitud = userDto.getLongitud();
         this.latitud = userDto.getLatitud();
         // TODO uncomment these lines
-        /*
-         * if ( userDto.getPassword() != null ) { this.passwordHash = BCrypt.hashpw(
-         * userDto.getPassword(), BCrypt.gensalt() ); }
-         */
+
+          if ( userDto.getPassword() != null ) { this.passwordHash = BCrypt.hashpw(
+          userDto.getPassword(), BCrypt.gensalt() ); }
+
     }
 }
