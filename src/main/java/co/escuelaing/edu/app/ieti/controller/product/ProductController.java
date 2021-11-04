@@ -1,5 +1,6 @@
 package co.escuelaing.edu.app.ieti.controller.product;
 
+import co.escuelaing.edu.app.ieti.repository.document.User;
 import co.escuelaing.edu.app.ieti.repository.product.document.Product;
 import co.escuelaing.edu.app.ieti.service.product.ProductServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/product")
@@ -23,6 +26,12 @@ public class ProductController {
     public ProductController( @Autowired ProductServiceI productServiceI )
     {
         this.productServiceI = productServiceI;
+    }
+
+    @GetMapping
+    public List<Product> all()
+    {
+        return productServiceI.all();
     }
 
     @GetMapping( "/{id}" )

@@ -4,7 +4,7 @@ import co.escuelaing.edu.app.ieti.controller.ticket.TicketDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.HashMap;
+import java.util.*;
 
 @Document(collection="tickets")
 public class Ticket{
@@ -14,7 +14,7 @@ public class Ticket{
 
     int userId;
 
-    HashMap<Product, String> products;
+    List<String>  products;
 
     int total;
 
@@ -43,11 +43,11 @@ public class Ticket{
         this.userId = userId;
     }
 
-    public HashMap<Product, String> getProducts() {
+    public List<String>  getProducts() {
         return products;
     }
 
-    public void setProducts(HashMap<Product, String> products) {
+    public void setProducts(List<String>  products) {
         this.products = products;
     }
 
