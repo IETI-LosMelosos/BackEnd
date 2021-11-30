@@ -1,13 +1,16 @@
+
 package co.escuelaing.edu.app.ieti.service.product;
 
 import co.escuelaing.edu.app.ieti.controller.product.ProductDto;
 import co.escuelaing.edu.app.ieti.exception.Product.ProductNotFoundException;
+import co.escuelaing.edu.app.ieti.repository.document.User;
 import co.escuelaing.edu.app.ieti.repository.product.document.Product;
 import co.escuelaing.edu.app.ieti.repository.product.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -18,6 +21,11 @@ public class ProductServiceImpl implements ProductServiceI {
 
     public ProductServiceImpl(@Autowired ProductRepository productrepository) {
         this.productRepository = productrepository;
+    }
+
+    @Override
+    public List<Product> all() {
+        return productRepository.findAll();
     }
 
     @Override
